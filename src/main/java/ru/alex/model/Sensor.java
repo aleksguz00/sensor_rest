@@ -21,9 +21,8 @@ public class Sensor {
 
     public Sensor() {}
 
-    public Sensor(String name, List<Measurement> measurements) {
+    public Sensor(String name) {
         this.name = name;
-        this.measurements = measurements;
     }
 
     public int getId() {

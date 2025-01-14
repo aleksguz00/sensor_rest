@@ -1,5 +1,6 @@
 package ru.alex.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -13,14 +14,15 @@ public class MeasurementDto {
     private float value;
 
     @NotNull
+    @JsonProperty("isRaining")
     private boolean isRaining;
 
     @NotNull
-    private Sensor sensor;
+    private String sensor;
 
     public MeasurementDto() {}
 
-    public MeasurementDto(float value, boolean isRaining, Sensor sensor) {
+    public MeasurementDto(float value, boolean isRaining, String sensor) {
         this.value = value;
         this.isRaining = isRaining;
         this.sensor = sensor;
@@ -42,11 +44,11 @@ public class MeasurementDto {
         isRaining = raining;
     }
 
-    public Sensor getSensor() {
+    public String getSensor() {
         return sensor;
     }
 
-    public void setSensor(Sensor sensor) {
+    public void setSensor(String sensor) {
         this.sensor = sensor;
     }
 }
